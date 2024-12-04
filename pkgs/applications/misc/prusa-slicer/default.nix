@@ -201,6 +201,8 @@ stdenv.mkDerivation (finalAttrs: {
     gappsWrapperArgs+=(
       --prefix LD_LIBRARY_PATH : "$out/lib"
     )
+
+    mv -v $out/bin/OCCTWrapper.so $out/lib
   '';
 
   doCheck = true;
